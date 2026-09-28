@@ -40,13 +40,14 @@ Submission awal memperoleh **public score 0,52978** dan rank **6** pada screensh
 
 Workflow menggunakan CatBoost multiclass dengan feature engineering untuk umur, luas per lantai, dan tinggi per lantai. Kategori lokasi dan material diproses sebagai kategori native CatBoost. Model memakai objective multiclass; early stopping memakai `TotalF1:average=Macro` tanpa bobot agar selaras dengan metrik kompetisi. Kandidat dibandingkan dengan scikit-learn Macro F1 pada holdout stratified 20% dan seed 42. Validasi adalah estimasi, bukan jaminan skor private.
 
-Hasil validasi awal:
+Hasil validasi yang sudah dicoba:
 
 | Konfigurasi | Macro F1 |
 |---|---:|
 | CatBoost depth 5, tanpa bobot | 0,52330 |
 | CatBoost depth 6, tanpa bobot | 0,52397 |
 | CatBoost depth 7, tanpa bobot | 0,52212 |
-| CatBoost depth 6, `auto_class_weights=Balanced` | **0,52455** |
+| CatBoost depth 6, `auto_class_weights=Balanced` | 0,52455 |
+| CatBoost depth 7, `SqrtBalanced`, 500 iterasi, `l2_leaf_reg=10` | **0,53163** |
 
-Model awal berbobot dilatih ulang pada seluruh 533.465 baris train.
+Skor 0,53163 berasal dari validasi lokal eksperimen `exp_002_weights`; model final dan submission belum diperbarui dengan kandidat ini. Semua tiga kandidat mencapai batas iterasi, sehingga rencana berikutnya menguji learning rate lebih kecil dan jumlah iterasi lebih tinggi. Lihat [rencana iterasi](PLAN.md) serta `reports/validation_exp_002_weights.json`. Model baseline awal dilatih ulang pada seluruh 533.465 baris train.
