@@ -15,20 +15,31 @@ Eksperimen `exp_002_weights` membandingkan tiga konfigurasi pada holdout stratif
 
 Leaderboard pada screenshot menyatakan public score dihitung dari sekitar 30% data test dan hasil akhir memakai 70% sisanya. Karena itu public score dipakai sebagai pemeriksaan tambahan; jangan menyesuaikan model berulang kali hanya agar cocok dengan public leaderboard.
 
-## Rencana peningkatan berikutnya
+## Roadmap menuju Macro F1 0,60+
 
-Lakukan tahapan berikut secara berurutan. Jalankan satu atau dua kandidat per eksperimen karena training pada seluruh data cukup lama. Gunakan ID baru dan simpan semua laporan.
+Target **0,60 atau lebih** adalah sasaran eksperimen, bukan hasil yang bisa dijamin. Posisi sekarang 0,53163 pada satu holdout lokal. Selisih ini cukup besar sehingga rencana berfokus pada kesalahan per kelas, sifat ordinal damage grade, dan validasi yang mengurangi overfit.
 
-1. **Pastikan early stopping sesuai metrik** — skrip sekarang memakai `TotalF1:average=Macro;use_weights=false`. Uji kembali konfigurasi terbaik `exp_002_weights` dengan skrip terbaru. Bandingkan Macro F1 hasil validasi scikit-learn, bukan hanya metrik CatBoost.
-2. **Tambah iterasi secara terkendali** — kandidat terbaik mencapai batas 500 iterasi. Uji depth 7 dengan learning rate 0,04–0,06, `SqrtBalanced`, regularisasi 8–12, dan 700–900 iterasi. Catat `best_iteration`; jika masih selalu menyentuh batas, naikkan iterasi satu tahap lagi.
-3. **Uji bobot kelas** — bandingkan `SqrtBalanced`, `Balanced`, serta bobot manual yang sedikit menguatkan kelas dengan recall terendah. Pilih bobot dari distribusi kelas train saja.
-4. **Uji kestabilan** — setelah satu atau dua kandidat menang pada seed 42, jalankan ulang kandidat teratas pada seed 21 dan 2026. Gunakan rerata Macro F1 serta F1 tiap kelas sebelum menyebutnya peningkatan yang konsisten. Hindari memilih konfigurasi hanya dari satu split.
-5. **Perbaiki keputusan kelas bila perlu** — simpan probabilitas validasi dan evaluasi penyesuaian ambang/perkalian probabilitas per kelas hanya pada data kalibrasi terpisah atau prediksi out-of-fold. Jangan menyetel ambang dan melaporkan skor pada baris validasi yang sama.
-6. **Analisis kesalahan dan fitur** — gunakan confusion matrix untuk mencari pasangan kelas yang sering tertukar. Rancang fitur turunan yang beralasan dari luas, tinggi, umur, lantai, material, dan geografi; pertahankan fitur hanya jika peningkatan muncul di beberapa seed.
-7. **Bandingkan strategi/model** — setelah baseline CatBoost stabil, bandingkan multiclass langsung dengan One-vs-Rest dan One-vs-One yang sesuai materi tugas, serta model boosting tabular lain yang tersedia. Semua metode harus dinilai pada split dan Macro F1 yang sama. Catat biaya komputasi karena OvO melatih lebih banyak model.
-8. **Finalisasi** — latih konfigurasi yang menang pada seluruh data train, buat notebook submission dengan ID eksperimen yang sama, periksa format sesuai `rules.md`, dan baru unggah secara manual. Catat public score; jangan memilih hanya berdasarkan public leaderboard.
+### Diagnosis awal
 
-Contoh uji lanjutan pada kode terbaru:
+Pada eksperimen terbaik saat ini, F1 tiap kelas adalah: Grade 1 **0,659**, Grade 2 **0,365**, Grade 3 **0,415**, Grade 4 **0,495**, dan Grade 5 **0,724**. Prioritasnya memperbaiki Grade 2 dan 3 tanpa menurunkan Grade 1 dan 5. Kebingungan terbesar ada pada kelas berdekatan, terutama Grade 3↔4 dan Grade 4↔5; ini mendukung pengujian metode ordinal. Detail ada di confusion matrix `reports/validation_exp_002_weights.json`.
+
+### Tahapan kerja dan gerbang skor
+
+| Tahap | Perubahan yang diuji | Gerbang untuk lanjut |
+|---|---|---|
+| 1. Reproduksi dan iterasi CatBoost | Jalankan ulang konfigurasi depth 7 + `SqrtBalanced` memakai early stopping Macro F1 yang sudah ditambahkan. Uji 700–900 iterasi dengan learning rate 0,04–0,05 karena run sebelumnya menyentuh batas 500. | Skor lokal mengulang atau melewati 0,53163; bandingkan juga F1 tiap kelas. |
+| 2. Bobot dan keputusan kelas | Bandingkan `SqrtBalanced`, `Balanced`, dan bobot manual. Simpan probabilitas; uji bias kelas, ambang, serta expected-grade decoding hanya pada data kalibrasi/OOF. | Peningkatan Macro F1 muncul pada prediksi OOF, bukan hanya pada satu validation set. |
+| 3. Model ordinal | Karena urutan kelas bermakna, latih empat classifier kumulatif: `damage_grade > 1`, `> 2`, `> 3`, `> 4`. Ubah probabilitas kumulatif menjadi probabilitas 5 kelas, jaga urutannya monoton, lalu pilih batas keputusan dengan OOF. Bandingkan dengan CatBoost multiclass langsung. | Menaikkan terutama Grade 2/3 dan meningkatkan Macro F1 rata-rata OOF. |
+| 4. Fitur terarah | Dari confusion matrix, uji fitur interaksi yang beralasan: umur × material, lantai × tinggi/luas, fondasi × kondisi tanah, serta konfigurasi struktur. Uji satu kelompok per run; fit statistik kategori hanya di fold train untuk mencegah leakage. | Peningkatan terulang pada beberapa fold/seed dan tidak mengorbankan kelas lain secara tajam. |
+| 5. Ensemble beragam | Blend probabilitas OOF dari CatBoost multiclass, model ordinal, dan satu model tabular non-neural lain yang layak. Pilih bobot blend dengan OOF, jangan dengan leaderboard public. | Ensemble mengungguli model tunggal pada rerata Macro F1 OOF. |
+| 6. Validasi akhir | Gunakan stratified 3-fold OOF untuk menyaring model; validasi 5-fold hanya untuk kandidat final bila waktu komputasi memungkinkan. Bandingkan rerata dan variasi skor. | Rerata OOF mendekati/menembus 0,60 dan skor tidak bergantung pada satu fold. |
+| 7. Submission | Latih kandidat terpilih pada semua train, buat submission melalui notebook, verifikasi aturan `rules.md`, lalu unggah manual. | File benar; public score hanya pemeriksaan tambahan. Private leaderboard tetap penilaian akhir. |
+
+Gunakan checkpoint sasaran **0,54 → 0,56 → 0,58 → 0,60**. Setelah setiap checkpoint, simpan report, parameter, seed, skor per kelas, confusion matrix, dan nama artefak. Jika suatu tahapan tidak meningkatkan OOF, jangan promosikan model; lanjut ke hipotesis berikutnya.
+
+### Run pertama yang disarankan
+
+Validasi dulu perubahan early stopping pada dua kandidat saja agar eksperimen tetap terukur:
 
 ```bash
 PYTHONPATH=.packages python3 scripts/train.py \
@@ -37,7 +48,7 @@ PYTHONPATH=.packages python3 scripts/train.py \
   --candidate '{"depth": 7, "learning_rate": 0.04, "iterations": 900, "l2_leaf_reg": 12, "auto_class_weights": "SqrtBalanced"}'
 ```
 
-Lalu bandingkan F1 laporan dengan baseline dan ulangi kandidat teratas pada seed berbeda sebelum training final.
+Setelah itu, cek apakah `best_iteration` masih mencapai batas. Ulangi kandidat terbaik dengan seed berbeda, lalu implementasikan evaluasi probabilitas/OOF untuk langkah kalibrasi dan ordinal. Jangan langsung melatih model final atau mengganti submission hanya karena satu skor holdout naik.
 
 ## Siklus setiap iterasi
 
