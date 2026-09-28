@@ -38,7 +38,7 @@ Submission awal memperoleh **public score 0,52978** dan rank **6** pada screensh
 
 ## Model dan evaluasi
 
-Workflow menggunakan CatBoost multiclass dengan feature engineering untuk umur, luas per lantai, dan tinggi per lantai. Kategori lokasi dan material diproses sebagai kategori native CatBoost. Model dibandingkan dengan Macro F1 pada holdout stratified 20% dan seed 42. Validasi adalah estimasi, bukan jaminan skor private.
+Workflow menggunakan CatBoost multiclass dengan feature engineering untuk umur, luas per lantai, dan tinggi per lantai. Kategori lokasi dan material diproses sebagai kategori native CatBoost. Model memakai objective multiclass; early stopping memakai `TotalF1:average=Macro` tanpa bobot agar selaras dengan metrik kompetisi. Kandidat dibandingkan dengan scikit-learn Macro F1 pada holdout stratified 20% dan seed 42. Validasi adalah estimasi, bukan jaminan skor private.
 
 Hasil validasi awal:
 

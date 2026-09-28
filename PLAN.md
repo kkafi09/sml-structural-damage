@@ -14,7 +14,7 @@ Leaderboard pada screenshot menyatakan public score dihitung dari sekitar 30% da
 ## Siklus setiap iterasi
 
 1. **Pilih satu hipotesis** — ubah satu kelompok hal saja, misalnya bobot kelas, kedalaman CatBoost, regularisasi, fitur turunan, atau jenis model tabular. Catat alasan sebelum run.
-2. **Validasi dari `.py`** — gunakan split stratified dan Macro F1. Simpan setiap run dengan ID unik beserta konfigurasi dan hasil validasinya.
+2. **Validasi dari `.py`** — gunakan split stratified. Early stopping CatBoost diarahkan ke Macro F1 tanpa bobot; kandidat kemudian dinilai dengan scikit-learn Macro F1. Simpan setiap run dengan ID unik beserta konfigurasi dan hasil validasinya.
 3. **Periksa kelas dan kesalahan** — lihat `classification_report` dan confusion matrix; jangan mengejar kenaikan rata-rata jika satu kelas menjadi jauh lebih buruk.
 4. **Latih kandidat final** — hanya finalisasi konfigurasi yang menunjukkan hasil lokal yang layak. Simpan model dengan ID eksperimen, bukan menimpa baseline.
 5. **Buat submission dari notebook** — atur `EXPERIMENT_ID` agar sama dengan ID model, lalu jalankan `notebooks/03_submission.ipynb`. Notebook menghasilkan CSV dengan ID yang sama.

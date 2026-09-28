@@ -64,7 +64,7 @@ def build_pipeline(parameters: dict, seed: int) -> Pipeline:
     ).set_output(transform="pandas")
     classifier = CatBoostClassifier(
         loss_function="MultiClass",
-        eval_metric="MultiClass",
+        eval_metric="TotalF1:average=Macro;use_weights=false",
         cat_features=CATEGORICAL_FEATURES,
         random_seed=seed,
         verbose=False,
