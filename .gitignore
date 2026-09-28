@@ -1,0 +1,26 @@
+# Dataset files from Kaggle
+data/*.csv
+!data/.gitkeep
+
+# Python and notebook artifacts
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Local environments and secrets
+venv/
+.venv/
+.packages/
+.env
+kaggle.json
+.kaggle/
+
+# Generated training/build artifacts
+catboost_info/
+build/
+dist/
+*.egg-info/
+*.tmp
+
+# OS metadata
+.DS_Store

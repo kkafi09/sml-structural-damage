@@ -1,0 +1,117 @@
+{
+  "seed": 42,
+  "validation_size": 106693,
+  "best_candidate": 1,
+  "best_parameters": {
+    "depth": 6,
+    "learning_rate": 0.1,
+    "iterations": 300,
+    "l2_leaf_reg": 6,
+    "auto_class_weights": "Balanced"
+  },
+  "best_iteration": 299,
+  "macro_f1": 0.5245489295959728,
+  "classification_report": {
+    "Grade 1": {
+      "precision": 0.5610491803278689,
+      "recall": 0.7754214246873301,
+      "f1-score": 0.6510424592908233,
+      "support": 11034.0
+    },
+    "Grade 2": {
+      "precision": 0.34494983277591973,
+      "recall": 0.42215127701375244,
+      "f1-score": 0.3796657586689244,
+      "support": 12216.0
+    },
+    "Grade 3": {
+      "precision": 0.3938879456706282,
+      "recall": 0.40087967326421614,
+      "f1-score": 0.39735305566368234,
+      "support": 19098.0
+    },
+    "Grade 4": {
+      "precision": 0.5014161980214277,
+      "recall": 0.47459010024088893,
+      "f1-score": 0.48763448372223,
+      "support": 25738.0
+    },
+    "Grade 5": {
+      "precision": 0.7709741550695826,
+      "recall": 0.6529126842282488,
+      "f1-score": 0.7070488906342038,
+      "support": 38607.0
+    },
+    "accuracy": 0.5510295895700749,
+    "macro avg": {
+      "precision": 0.5144554623730855,
+      "recall": 0.5451910318868873,
+      "f1-score": 0.5245489295959728,
+      "support": 106693.0
+    },
+    "weighted avg": {
+      "precision": 0.5679608325643939,
+      "recall": 0.5510295895700749,
+      "f1-score": 0.5554068300969792,
+      "support": 106693.0
+    }
+  },
+  "confusion_matrix_labels": [
+    "Grade 1",
+    "Grade 2",
+    "Grade 3",
+    "Grade 4",
+    "Grade 5"
+  ],
+  "confusion_matrix": [
+    [
+      8556,
+      1771,
+      363,
+      191,
+      153
+    ],
+    [
+      3209,
+      5157,
+      2499,
+      854,
+      497
+    ],
+    [
+      1785,
+      4195,
+      7656,
+      3781,
+      1681
+    ],
+    [
+      842,
+      2119,
+      5405,
+      12215,
+      5157
+    ],
+    [
+      858,
+      1708,
+      3514,
+      7320,
+      25207
+    ]
+  ],
+  "candidates": [
+    {
+      "candidate": 1,
+      "parameters": {
+        "depth": 6,
+        "learning_rate": 0.1,
+        "iterations": 300,
+        "l2_leaf_reg": 6,
+        "auto_class_weights": "Balanced"
+      },
+      "macro_f1": 0.5245489295959728,
+      "best_iteration": 299
+    }
+  ]
+}
