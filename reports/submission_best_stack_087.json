@@ -1,0 +1,15 @@
+{
+  "model": "best-stack submission refit: three XGBoost and three LightGBM base learners",
+  "validation_macro_f1": 0.5985512292352484,
+  "submission_rows": 228629,
+  "grade_counts": {
+    "1": 23379,
+    "2": 27425,
+    "3": 44098,
+    "4": 57091,
+    "5": 76636
+  },
+  "csv": "submissions/best_stack_087.csv",
+  "note": "0.598551 is the historical local holdout score, not a Kaggle test score or a score measured on this CSV. Base learners were refit using the validated 80% split, and the meta-model and class offsets use calibration OOF artifacts. The original fitted LightGBM model files were not saved, so their refit uses the recorded iteration counts and shared feature preparation; this can differ from the exact experiment-087 base models.",
+  "validation_score_source": "reports/validation_exp_087_interaction_bias.json"
+}
