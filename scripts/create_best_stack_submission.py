@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import argparse
 import sys
 from pathlib import Path
 
@@ -102,6 +103,23 @@ def make_matrices(test_raw: pd.DataFrame):
 
 def main() -> None:
     """Run the experiment and save its report and prediction artifacts."""
+    parser = argparse.ArgumentParser(description="Legacy refit; not an identical reconstruction of experiment 087.")
+    parser.add_argument("--external-data-approved", action="store_true",
+                        help="confirm that competition rules permit the external intensity dataset")
+    arguments = parser.parse_args()
+    if not arguments.external_data_approved:
+        parser.error("Legacy refit blocked: external-data permission is unverified. Use python -m scripts.workflow for the official-only recipe.")
+    required = [ROOT / "data" / "ward_level_pred_intensity.csv"] + [
+        ROOT / "reports" / name for name in (
+            "stacking_holdout_086.npz", "xgboost_holdout_036.npz", "xgboost_holdout_039.npz",
+            "xgboost_holdout_053.npz", "lightgbm_holdout_030.npz", "lightgbm_holdout_041.npz",
+            "lightgbm_holdout_085.npz", "validation_exp_086_location_interaction_stack.json",
+            "validation_exp_087_interaction_bias.json",
+        )
+    ]
+    missing = [str(path.relative_to(ROOT)) for path in required if not path.exists()]
+    if missing:
+        parser.error("Legacy refit blocked; missing prerequisites: " + ", ".join(missing))
     test_frame = pd.read_csv(ROOT / "data" / "test.csv")
     raw_test = build_test_features(test_frame)
     train_x, train_y, test_x = make_matrices(raw_test)
@@ -186,7 +204,7 @@ def main() -> None:
     if not sample["building_id"].equals(test_frame["building_id"]):
         raise ValueError("test.csv dan sample_submission.csv berbeda urutan building_id")
     sample["damage_grade"] = test_grades
-    out = ROOT / "submissions" / "best_stack_087.csv"
+    out = ROOT / "submissions" / "candidate_legacy087_refit.csv"
     sample.to_csv(out, index=False)
     report = {
         "model": "best-stack submission refit: three XGBoost and three LightGBM base learners",
@@ -197,7 +215,7 @@ def main() -> None:
         "csv": str(out.relative_to(ROOT)),
         "note": "0.598551 is the historical local holdout score, not a Kaggle test score or a score measured on this CSV. Base learners were refit using the validated 80% split, and the meta-model and class offsets use calibration OOF artifacts. The original fitted LightGBM model files were not saved, so their refit uses the recorded iteration counts and shared feature preparation; this can differ from the exact experiment-087 base models.",
     }
-    (ROOT / "reports" / "submission_best_stack_087.json").write_text(
+    (ROOT / "reports" / "submission_legacy087_refit.json").write_text(
         json.dumps(report, indent=2), encoding="utf-8"
     )
     print(json.dumps(report, indent=2), flush=True)

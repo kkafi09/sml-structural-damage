@@ -1,0 +1,28 @@
+test_original_submission_is_protected (test_workflow.InferenceTests.test_original_submission_is_protected)
+Refuse to overwrite either original CSV before loading any estimator. ... ok
+test_stack_roundtrip_and_prediction (test_workflow.InferenceTests.test_stack_roundtrip_and_prediction)
+Training base pipelines
+Base XGBoost 1/3 fitted
+Base XGBoost 2/3 fitted
+Base XGBoost 3/3 fitted
+Base LightGBM 1/3 multiclass fitted
+Base LightGBM 1/3 multiclassova fitted
+Base LightGBM 2/3 multiclass fitted
+Base LightGBM 2/3 multiclassova fitted
+Base LightGBM 3/3 multiclass fitted
+Base LightGBM 3/3 multiclassova fitted
+Selecting logistic regularization and calibration offsets
+Train the complete architecture on small data and compare reloaded probabilities. ... ok
+test_submission_rejects_invalid_files (test_workflow.InferenceTests.test_submission_rejects_invalid_files)
+Reject reordered IDs, duplicates, floating labels, and missing predictions. ... ok
+test_held_labels_cannot_change_own_encoding (test_workflow.LeakageTests.test_held_labels_cannot_change_own_encoding)
+Perturb a fixed held fold and verify its encoded values stay identical. ... ok
+test_partition_ids_do_not_overlap (test_workflow.LeakageTests.test_partition_ids_do_not_overlap)
+Verify the frozen stratified partitions cover all rows exactly once. ... ok
+test_validation_does_not_refit_imputation_or_categories (test_workflow.LeakageTests.test_validation_does_not_refit_imputation_or_categories)
+New categories and extreme query ages must not alter fitted training state. ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 49.033s
+
+OK

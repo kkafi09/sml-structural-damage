@@ -28,6 +28,14 @@ build/
 dist/
 *.egg-info/
 *.tmp
+/reports/workflow_cache/
+/reports/workflow_progress.json
+# Trained estimators remain local; regenerate them using the training workflow.
+/models/*.joblib
+/models/*.pkl
+/models/*.pickle
+/models/*.cbm
+/models/*.ubj
 
 # OS metadata
 .DS_Store
