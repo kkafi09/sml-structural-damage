@@ -17,6 +17,13 @@ kaggle.json
 
 # Generated training/build artifacts
 catboost_info/
+# Local experiment caches; keep generated probabilities out of Git.
+/reports/*.npz
+/reports/*.pkl
+/reports/catboost_snapshot*
+/reports/catboost_info*/
+/reports/dart_checkpoint_*.txt
+*.log
 build/
 dist/
 *.egg-info/

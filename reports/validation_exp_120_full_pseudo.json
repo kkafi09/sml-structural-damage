@@ -1,0 +1,50 @@
+{
+  "method": "Full 80% fit split plus low-weight OOF pseudo-labels from calibration; evaluation untouched",
+  "seed": 2026,
+  "confidence_threshold": 0.75,
+  "pseudo_weight": 0.15,
+  "pseudo_rows": 15947,
+  "baseline_evaluation_macro_f1": 0.5985512292352484,
+  "results": {
+    "student_raw": {
+      "macro_f1": 0.5875042757385176,
+      "per_grade_f1": {
+        "Grade 1": 0.694583931133429,
+        "Grade 2": 0.4556396970904743,
+        "Grade 3": 0.48778376298576376,
+        "Grade 4": 0.5379823571219533,
+        "Grade 5": 0.7615316303609675
+      }
+    },
+    "stack_blend_0.10": {
+      "macro_f1": 0.5986724802504754,
+      "per_grade_f1": {
+        "Grade 1": 0.7031448827485912,
+        "Grade 2": 0.47223332001598084,
+        "Grade 3": 0.49343884603826504,
+        "Grade 4": 0.5643224037384621,
+        "Grade 5": 0.7602229487110778
+      }
+    },
+    "stack_blend_0.20": {
+      "macro_f1": 0.5976314339751114,
+      "per_grade_f1": {
+        "Grade 1": 0.7024673439767779,
+        "Grade 2": 0.46909439386679447,
+        "Grade 3": 0.49398972517332534,
+        "Grade 4": 0.5618836003586325,
+        "Grade 5": 0.7607221065000267
+      }
+    },
+    "stack_blend_0.30": {
+      "macro_f1": 0.596830778095359,
+      "per_grade_f1": {
+        "Grade 1": 0.7015735214324471,
+        "Grade 2": 0.4676258992805755,
+        "Grade 3": 0.4949374627754616,
+        "Grade 4": 0.5592879927539085,
+        "Grade 5": 0.760729014234402
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "method": "Three-start ordinal expected-grade cutpoint search on best-stack OOF",
+  "calibration_oof_macro_f1": 0.5731192524390757,
+  "evaluation_macro_f1": 0.5699481133424068,
+  "thresholds": [
+    1.8220000000000016,
+    2.8299999999999854,
+    3.6199999999999855,
+    4.427999999999989
+  ]
+}

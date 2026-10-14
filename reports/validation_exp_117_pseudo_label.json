@@ -1,0 +1,48 @@
+{
+  "method": "OOF stack pseudo-labels at confidence >=0.75; 180k stratified training sample; evaluation untouched",
+  "pseudo_rows": 15947,
+  "pseudo_weight": 0.35,
+  "baseline_evaluation_macro_f1": 0.5985512292352484,
+  "results": {
+    "student_raw": {
+      "macro_f1": 0.5713664159064911,
+      "per_grade_f1": {
+        "Grade 1": 0.6861620486307456,
+        "Grade 2": 0.4102788984388704,
+        "Grade 3": 0.47459324155193994,
+        "Grade 4": 0.5285696398013273,
+        "Grade 5": 0.7572282511095718
+      }
+    },
+    "stack_blend_0.15": {
+      "macro_f1": 0.5960682605937759,
+      "per_grade_f1": {
+        "Grade 1": 0.7033650004439315,
+        "Grade 2": 0.46456885982836127,
+        "Grade 3": 0.4908671216378964,
+        "Grade 4": 0.5610383536014967,
+        "Grade 5": 0.7605019674571946
+      }
+    },
+    "stack_blend_0.30": {
+      "macro_f1": 0.5945029411217743,
+      "per_grade_f1": {
+        "Grade 1": 0.7041055463935423,
+        "Grade 2": 0.46020933709918593,
+        "Grade 3": 0.4907022204400782,
+        "Grade 4": 0.5561947078192565,
+        "Grade 5": 0.761302893856808
+      }
+    },
+    "stack_blend_0.50": {
+      "macro_f1": 0.5879852591953278,
+      "per_grade_f1": {
+        "Grade 1": 0.6987645963784058,
+        "Grade 2": 0.4439347604485219,
+        "Grade 3": 0.4881944791094694,
+        "Grade 4": 0.5479783713985957,
+        "Grade 5": 0.7610540886416465
+      }
+    }
+  }
+}

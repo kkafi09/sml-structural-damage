@@ -1,0 +1,13 @@
+{
+  "method": "5-fold cross-fitted CatBoost depth-3 meta-model on baseline log-probabilities",
+  "calibration_oof_macro_f1": 0.5950444976319836,
+  "evaluation_macro_f1": 0.5959906438741177,
+  "baseline_evaluation_macro_f1": 0.5985512292352484,
+  "bias": [
+    -0.12499999999999978,
+    0.14999999999999972,
+    0.07499999999999976,
+    0.0,
+    -0.20000000000000018
+  ]
+}

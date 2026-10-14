@@ -1,0 +1,13 @@
+{
+  "method": "12-start class-offset search on location-interaction stack OOF probabilities",
+  "calibration_oof_macro_f1": 0.5978225107925692,
+  "evaluation_macro_f1_uncalibrated": 0.591004749787345,
+  "evaluation_macro_f1_tuned": 0.5975677344345434,
+  "bias_by_grade": {
+    "Grade 1": -0.20399999999999913,
+    "Grade 2": 0.1559999999999997,
+    "Grade 3": 0.1809999999999996,
+    "Grade 4": 0.020999999999999557,
+    "Grade 5": -0.15399999999999972
+  }
+}

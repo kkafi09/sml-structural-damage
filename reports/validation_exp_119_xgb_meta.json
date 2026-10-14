@@ -1,0 +1,139 @@
+{
+  "method": "class-balanced XGBoost nonlinear meta-model over six best base OOF probability vectors",
+  "cv_folds": 3,
+  "configurations": [
+    {
+      "parameters": {
+        "max_depth": 2,
+        "learning_rate": 0.05,
+        "n_estimators": 200
+      },
+      "calibration_oof_macro_f1": 0.5883136291196402
+    },
+    {
+      "parameters": {
+        "max_depth": 2,
+        "learning_rate": 0.03,
+        "n_estimators": 400
+      },
+      "calibration_oof_macro_f1": 0.588389041603677
+    },
+    {
+      "parameters": {
+        "max_depth": 3,
+        "learning_rate": 0.05,
+        "n_estimators": 200
+      },
+      "calibration_oof_macro_f1": 0.588655880754796
+    },
+    {
+      "parameters": {
+        "max_depth": 3,
+        "learning_rate": 0.03,
+        "n_estimators": 400
+      },
+      "calibration_oof_macro_f1": 0.588065921793938
+    }
+  ],
+  "selected_parameters": {
+    "max_depth": 3,
+    "learning_rate": 0.05,
+    "n_estimators": 200
+  },
+  "calibration_oof_macro_f1": 0.588655880754796,
+  "calibration": {
+    "bias_by_grade": {
+      "Grade 1": -0.7249999999999992,
+      "Grade 2": -0.30000000000000016,
+      "Grade 3": -0.05000000000000024,
+      "Grade 4": 0.19999999999999965,
+      "Grade 5": 0.2499999999999998
+    },
+    "calibration_macro_f1": 0.5964155369866487,
+    "evaluation_macro_f1": 0.5947929213697526,
+    "evaluation_classification_report": {
+      "Grade 1": {
+        "precision": 0.7103876552502822,
+        "recall": 0.6842486858800072,
+        "f1-score": 0.6970732157695504,
+        "support": 5517.0
+      },
+      "Grade 2": {
+        "precision": 0.42956636005256243,
+        "recall": 0.535199738048461,
+        "f1-score": 0.4766000874763085,
+        "support": 6108.0
+      },
+      "Grade 3": {
+        "precision": 0.48441683624290455,
+        "recall": 0.4736621635773379,
+        "f1-score": 0.4789791379858096,
+        "support": 9549.0
+      },
+      "Grade 4": {
+        "precision": 0.5444626684732226,
+        "recall": 0.5932861916232808,
+        "f1-score": 0.5678268630075859,
+        "support": 12869.0
+      },
+      "Grade 5": {
+        "precision": 0.8029654808650296,
+        "recall": 0.7097492747617075,
+        "f1-score": 0.7534853026095086,
+        "support": 19304.0
+      },
+      "accuracy": 0.6167732018670216,
+      "macro avg": {
+        "precision": 0.5943598001768003,
+        "recall": 0.5992292107781589,
+        "f1-score": 0.5947929213697526,
+        "support": 53347.0
+      },
+      "weighted avg": {
+        "precision": 0.631260091733383,
+        "recall": 0.6167732018670216,
+        "f1-score": 0.6220263976596805,
+        "support": 53347.0
+      }
+    },
+    "evaluation_confusion_matrix": [
+      [
+        3775,
+        1267,
+        225,
+        150,
+        100
+      ],
+      [
+        840,
+        3269,
+        1335,
+        442,
+        222
+      ],
+      [
+        344,
+        1791,
+        4523,
+        2133,
+        758
+      ],
+      [
+        176,
+        698,
+        2078,
+        7635,
+        2282
+      ],
+      [
+        179,
+        585,
+        1176,
+        3663,
+        13701
+      ]
+    ],
+    "uncalibrated_evaluation_macro_f1": 0.5878788071274266
+  },
+  "baseline_holdout_macro_f1": 0.5985512292352484
+}

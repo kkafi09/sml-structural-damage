@@ -1,0 +1,164 @@
+{
+  "seed": 2026,
+  "method": "LightGBM; 80/10/10 stratified train/calibration/evaluation",
+  "parameters": {
+    "num_leaves": 63,
+    "max_depth": -1,
+    "learning_rate": 0.06,
+    "min_child_samples": 100,
+    "class_weight": {
+      "Grade 1": 0.95,
+      "Grade 2": 1.3,
+      "Grade 3": 1.25,
+      "Grade 4": 0.95,
+      "Grade 5": 0.8
+    }
+  },
+  "location_blend": {
+    "source": "prefix8",
+    "model_weight": 0.925,
+    "calibration_macro_f1": 0.5914762912620458
+  },
+  "best_iteration": 73,
+  "calibration_macro_f1_uncalibrated": 0.5914762912620458,
+  "calibration": {
+    "bias_by_grade": {
+      "Grade 1": 0.0,
+      "Grade 2": 0.0,
+      "Grade 3": 0.0,
+      "Grade 4": 0.1749999999999997,
+      "Grade 5": 0.0
+    },
+    "calibration_macro_f1": 0.5920045695189248,
+    "evaluation_macro_f1": 0.5893289115470182,
+    "evaluation_classification_report": {
+      "Grade 1": {
+        "precision": 0.687721160651097,
+        "recall": 0.7045495740438644,
+        "f1-score": 0.6960336646073955,
+        "support": 5517.0
+      },
+      "Grade 2": {
+        "precision": 0.45093644949575795,
+        "recall": 0.4611984282907662,
+        "f1-score": 0.45600971266693646,
+        "support": 6108.0
+      },
+      "Grade 3": {
+        "precision": 0.46657381615598886,
+        "recall": 0.4911509058540161,
+        "f1-score": 0.47854701290750473,
+        "support": 9549.0
+      },
+      "Grade 4": {
+        "precision": 0.5417797457506071,
+        "recall": 0.5894785919651877,
+        "f1-score": 0.564623571880466,
+        "support": 12869.0
+      },
+      "Grade 5": {
+        "precision": 0.7926871334943084,
+        "recall": 0.7142561127227518,
+        "f1-score": 0.7514305956727887,
+        "support": 19304.0
+      },
+      "accuracy": 0.6142426003336645,
+      "macro avg": {
+        "precision": 0.5879396611095519,
+        "recall": 0.5921267225753172,
+        "f1-score": 0.5893289115470182,
+        "support": 53347.0
+      },
+      "weighted avg": {
+        "precision": 0.623802403515557,
+        "recall": 0.6142426003336645,
+        "f1-score": 0.6179677853348762,
+        "support": 53347.0
+      }
+    },
+    "evaluation_confusion_matrix": [
+      [
+        3887,
+        1000,
+        351,
+        170,
+        109
+      ],
+      [
+        944,
+        2817,
+        1566,
+        541,
+        240
+      ],
+      [
+        406,
+        1413,
+        4690,
+        2222,
+        818
+      ],
+      [
+        191,
+        544,
+        2109,
+        7586,
+        2439
+      ],
+      [
+        224,
+        473,
+        1336,
+        3483,
+        13788
+      ]
+    ],
+    "uncalibrated_evaluation_macro_f1": 0.5891988754247102
+  },
+  "evaluation_macro_f1": 0.5891988754247102,
+  "evaluation_classification_report": {
+    "Grade 1": {
+      "precision": 0.685387323943662,
+      "recall": 0.7056371216240711,
+      "f1-score": 0.6953648298651425,
+      "support": 5517.0
+    },
+    "Grade 2": {
+      "precision": 0.44719912129295464,
+      "recall": 0.46660117878192536,
+      "f1-score": 0.45669417514622224,
+      "support": 6108.0
+    },
+    "Grade 3": {
+      "precision": 0.45628039269657766,
+      "recall": 0.5207875170174887,
+      "f1-score": 0.48640453834115804,
+      "support": 9549.0
+    },
+    "Grade 4": {
+      "precision": 0.5687784679089027,
+      "recall": 0.5336856010568032,
+      "f1-score": 0.550673508659397,
+      "support": 12869.0
+    },
+    "Grade 5": {
+      "precision": 0.7771834061135371,
+      "recall": 0.7375673435557397,
+      "f1-score": 0.7568573251116308,
+      "support": 19304.0
+    },
+    "accuracy": 0.6152548409470073,
+    "macro avg": {
+      "precision": 0.5869657423911268,
+      "recall": 0.5928557524072057,
+      "f1-score": 0.5891988754247102,
+      "support": 53347.0
+    },
+    "weighted avg": {
+      "precision": 0.6221934531285651,
+      "recall": 0.6152548409470073,
+      "f1-score": 0.6179819654651909,
+      "support": 53347.0
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "method": "Five-fold shrunk district class-bias calibration",
+  "cross_validated_macro_f1_by_shrinkage": {
+    "0.0": 0.5966399259015385,
+    "0.25": 0.5964751283394611,
+    "0.5": 0.5964751020169012,
+    "0.75": 0.5947263003982943,
+    "1.0": 0.5916380952594944
+  },
+  "selected_shrinkage": 0.0,
+  "evaluation_macro_f1": 0.5976665158647735,
+  "evaluation_macro_f1_global_bias": 0.5976665158647735
+}

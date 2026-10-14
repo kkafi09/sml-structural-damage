@@ -1,0 +1,12 @@
+{
+  "method": "Multi-start coordinate search on stacked OOF calibration rows",
+  "calibration_oof_macro_f1": 0.5968794432356421,
+  "evaluation_macro_f1": 0.5965964696539159,
+  "bias_by_grade": {
+    "Grade 1": -0.10444790373434712,
+    "Grade 2": 0.2680046558885104,
+    "Grade 3": 0.12840176810311452,
+    "Grade 4": 0.0193404242248032,
+    "Grade 5": -0.31129894448208095
+  }
+}

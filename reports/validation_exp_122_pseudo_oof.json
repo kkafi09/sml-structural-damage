@@ -1,0 +1,39 @@
+{
+  "method": "3-fold OOF pseudo-label students; blend selected by nested calibration CV",
+  "pseudo_confidence_threshold": 0.75,
+  "pseudo_weight": 0.35,
+  "source_training_sample": 150000,
+  "pseudo_rows_total": 15947,
+  "blend_cv_scores": [
+    {
+      "weight": 0.05,
+      "cv_macro_f1": 0.5964620475899883
+    },
+    {
+      "weight": 0.1,
+      "cv_macro_f1": 0.5958250637073093
+    },
+    {
+      "weight": 0.15,
+      "cv_macro_f1": 0.5964522409650552
+    },
+    {
+      "weight": 0.2,
+      "cv_macro_f1": 0.5956784240429719
+    },
+    {
+      "weight": 0.3,
+      "cv_macro_f1": 0.5948831749750125
+    }
+  ],
+  "selected_blend_weight": 0.05,
+  "evaluation_macro_f1": 0.5973087432515373,
+  "baseline_evaluation_macro_f1": 0.5985512292352484,
+  "bias": [
+    -0.32499999999999996,
+    0.0,
+    0.0,
+    -0.1000000000000002,
+    -0.39999999999999947
+  ]
+}

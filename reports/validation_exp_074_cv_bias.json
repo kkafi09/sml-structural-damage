@@ -1,0 +1,20 @@
+{
+  "method": "5-fold cross-fitted class-bias calibration",
+  "calibration_oof_macro_f1": 0.5964948072411052,
+  "evaluation_macro_f1_full_bias": 0.5976338322268215,
+  "evaluation_macro_f1_mean_fold_bias": 0.5976807889667592,
+  "full_bias": {
+    "Grade 1": -0.3699999999999988,
+    "Grade 2": -0.02000000000000049,
+    "Grade 3": -4.996003610813204e-16,
+    "Grade 4": -0.14999999999999944,
+    "Grade 5": -0.44999999999999896
+  },
+  "mean_fold_bias": {
+    "Grade 1": -0.35399999999999876,
+    "Grade 2": 0.0479999999999995,
+    "Grade 3": 0.05799999999999952,
+    "Grade 4": -0.06999999999999951,
+    "Grade 5": -0.3619999999999989
+  }
+}

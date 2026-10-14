@@ -1,0 +1,131 @@
+{
+  "seed": 2026,
+  "method": "XGBoost histogram trees with native categoricals; 80/10/10 split",
+  "parameters": {
+    "n_estimators": 400,
+    "learning_rate": 0.08,
+    "max_depth": 7,
+    "min_child_weight": 20,
+    "subsample": 0.9,
+    "colsample_bytree": 0.9,
+    "reg_lambda": 6.0,
+    "max_cat_to_onehot": 4,
+    "max_cat_threshold": 16,
+    "class_weights": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "categorical_columns": [
+    "district_id",
+    "vdcmun_id",
+    "ward_id",
+    "land_surface_condition",
+    "foundation_type",
+    "roof_type",
+    "ground_floor_type",
+    "other_floor_type",
+    "position",
+    "plan_configuration",
+    "superstructure"
+  ],
+  "best_iteration": 346,
+  "evaluation_macro_f1_uncalibrated": 0.5906636286098668,
+  "calibration": {
+    "bias_by_grade": {
+      "Grade 1": -0.22499999999999998,
+      "Grade 2": 0.09999999999999964,
+      "Grade 3": 0.07499999999999996,
+      "Grade 4": -5.551115123125783e-16,
+      "Grade 5": -0.2999999999999994
+    },
+    "calibration_macro_f1": 0.5966793042033128,
+    "evaluation_macro_f1": 0.5951378378879594,
+    "evaluation_classification_report": {
+      "Grade 1": {
+        "precision": 0.7028571428571428,
+        "recall": 0.6911364872213159,
+        "f1-score": 0.6969475415828916,
+        "support": 5517.0
+      },
+      "Grade 2": {
+        "precision": 0.4583399713238808,
+        "recall": 0.47102161100196466,
+        "f1-score": 0.4645942672587808,
+        "support": 6108.0
+      },
+      "Grade 3": {
+        "precision": 0.47160684918254814,
+        "recall": 0.5105246622683004,
+        "f1-score": 0.4902946796741426,
+        "support": 9549.0
+      },
+      "Grade 4": {
+        "precision": 0.5485954852290048,
+        "recall": 0.5873028207319916,
+        "f1-score": 0.5672896494783457,
+        "support": 12869.0
+      },
+      "Grade 5": {
+        "precision": 0.7948206035023673,
+        "recall": 0.7218193120596768,
+        "f1-score": 0.756563051445636,
+        "support": 19304.0
+      },
+      "accuracy": 0.619659962134703,
+      "macro avg": {
+        "precision": 0.5952440104189888,
+        "recall": 0.5963609786566499,
+        "f1-score": 0.5951378378879594,
+        "support": 53347.0
+      },
+      "weighted avg": {
+        "precision": 0.6295324841932074,
+        "recall": 0.619659962134703,
+        "f1-score": 0.6236483572043642,
+        "support": 53347.0
+      }
+    },
+    "evaluation_confusion_matrix": [
+      [
+        3813,
+        1082,
+        348,
+        164,
+        110
+      ],
+      [
+        877,
+        2877,
+        1607,
+        506,
+        241
+      ],
+      [
+        362,
+        1373,
+        4875,
+        2130,
+        809
+      ],
+      [
+        179,
+        504,
+        2191,
+        7558,
+        2437
+      ],
+      [
+        194,
+        441,
+        1316,
+        3419,
+        13934
+      ]
+    ],
+    "uncalibrated_evaluation_macro_f1": 0.5906636286098668
+  }
+}

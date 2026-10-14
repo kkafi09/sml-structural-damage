@@ -1,0 +1,5 @@
+{
+  "method": "Pairwise binary LightGBM for Grade 2 versus Grade 3",
+  "best_iteration": 100,
+  "calibration_pair_f1": 0.6445017182130585
+}

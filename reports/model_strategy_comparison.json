@@ -1,0 +1,28 @@
+{
+  "metric": "Macro F1",
+  "validation": {
+    "split": "stratified 80/10/10",
+    "seed": 2026
+  },
+  "results": [
+    {
+      "strategy": "LightGBM One-vs-All (OvA)",
+      "macro_f1": 0.5886743388164771,
+      "notes": "Calibrated on the calibration split",
+      "source": "validation_exp_024_ova.json"
+    },
+    {
+      "strategy": "Pairwise One-vs-One (OvO), grades 2/3 and 3/4",
+      "macro_f1": 0.5971638555296003,
+      "notes": "Pairwise log-odds corrections applied to the baseline stack",
+      "source": "validation_exp_080_pairwise_joint.json"
+    },
+    {
+      "strategy": "OOF ensemble plus class-offset calibration",
+      "macro_f1": 0.5985512292352484,
+      "notes": "Selected local candidate; not a Kaggle score",
+      "source": "submission_best_stack_087.json"
+    }
+  ],
+  "caveat": "These are the best available configurations for each strategy, not a controlled comparison of strategy alone; feature sets and base learners differ."
+}

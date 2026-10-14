@@ -1,0 +1,145 @@
+{
+  "method": "Cross-fitted ID-prefix by structure target encodings",
+  "specifications": [
+    [
+      [
+        "id_prefix8",
+        "foundation_type"
+      ],
+      80
+    ],
+    [
+      [
+        "id_prefix8",
+        "roof_type"
+      ],
+      60
+    ],
+    [
+      [
+        "id_prefix8",
+        "ground_floor_type"
+      ],
+      80
+    ],
+    [
+      [
+        "id_prefix8",
+        "position"
+      ],
+      60
+    ],
+    [
+      [
+        "id_prefix8",
+        "plan_configuration"
+      ],
+      60
+    ],
+    [
+      [
+        "id_prefix8",
+        "land_surface_condition"
+      ],
+      60
+    ]
+  ],
+  "best_iterations": [
+    74,
+    94
+  ],
+  "calibration": {
+    "bias_by_grade": {
+      "Grade 1": -0.12499999999999925,
+      "Grade 2": 0.09999999999999964,
+      "Grade 3": 0.0,
+      "Grade 4": 0.02499999999999964,
+      "Grade 5": -0.1750000000000002
+    },
+    "calibration_macro_f1": 0.5932541944269821,
+    "evaluation_macro_f1": 0.5921058416543297,
+    "evaluation_classification_report": {
+      "Grade 1": {
+        "precision": 0.7010537992235164,
+        "recall": 0.6873300706905927,
+        "f1-score": 0.6941241076331686,
+        "support": 5517.0
+      },
+      "Grade 2": {
+        "precision": 0.4392173787944181,
+        "recall": 0.4998362802881467,
+        "f1-score": 0.46757025805957575,
+        "support": 6108.0
+      },
+      "Grade 3": {
+        "precision": 0.46991517064509764,
+        "recall": 0.4989004084197298,
+        "f1-score": 0.4839741961700615,
+        "support": 9549.0
+      },
+      "Grade 4": {
+        "precision": 0.5520770620108368,
+        "recall": 0.5700520630973658,
+        "f1-score": 0.5609205948694422,
+        "support": 12869.0
+      },
+      "Grade 5": {
+        "precision": 0.7913558453391037,
+        "recall": 0.7199026108578533,
+        "f1-score": 0.7539400515394005,
+        "support": 19304.0
+      },
+      "accuracy": 0.615629744877875,
+      "macro avg": {
+        "precision": 0.5907238512025945,
+        "recall": 0.5952042866707377,
+        "f1-score": 0.5921058416543297,
+        "support": 53347.0
+      },
+      "weighted avg": {
+        "precision": 0.62643984617553,
+        "recall": 0.615629744877875,
+        "f1-score": 0.6200801793457821,
+        "support": 53347.0
+      }
+    },
+    "evaluation_confusion_matrix": [
+      [
+        3792,
+        1150,
+        334,
+        139,
+        102
+      ],
+      [
+        863,
+        3053,
+        1476,
+        476,
+        240
+      ],
+      [
+        377,
+        1567,
+        4764,
+        2034,
+        807
+      ],
+      [
+        180,
+        642,
+        2196,
+        7336,
+        2515
+      ],
+      [
+        197,
+        539,
+        1368,
+        3303,
+        13897
+      ]
+    ],
+    "uncalibrated_evaluation_macro_f1": 0.590197206432817
+  }
+}
