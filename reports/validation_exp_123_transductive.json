@@ -1,0 +1,14 @@
+{
+  "method": "3-fold transductive LightGBM pseudo-labels from other evaluation rows only",
+  "source_sample": 150000,
+  "confidence_threshold": 0.75,
+  "pseudo_weight": 0.25,
+  "evaluation_labels_used_for_training": false,
+  "baseline_macro_f1": 0.5985512292352484,
+  "scores": {
+    "crossfit_heldout_blend_0.05": 0.5980433849970233,
+    "crossfit_heldout_blend_0.10": 0.597182427477525,
+    "crossfit_heldout_blend_0.15": 0.5965222511567883
+  },
+  "note": "student_ensemble scores excluded because some rows contributed pseudo-labels to the model that predicted them; only crossfit_heldout scores are valid."
+}

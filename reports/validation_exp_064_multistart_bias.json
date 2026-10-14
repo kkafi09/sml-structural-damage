@@ -1,0 +1,13 @@
+{
+  "method": "24-start class-offset coordinate search on best-stack OOF probabilities",
+  "calibration_oof_macro_f1": 0.5979394493092295,
+  "evaluation_macro_f1_uncalibrated": 0.5916782428138911,
+  "evaluation_macro_f1_tuned": 0.5973073026666887,
+  "bias_by_grade": {
+    "Grade 1": -0.19099999999999792,
+    "Grade 2": 0.18399999999999886,
+    "Grade 3": 0.19899999999999893,
+    "Grade 4": 0.05399999999999848,
+    "Grade 5": -0.24599999999999833
+  }
+}

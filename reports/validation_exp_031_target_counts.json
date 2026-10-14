@@ -1,0 +1,164 @@
+{
+  "seed": 2026,
+  "method": "LightGBM; 90/5/5 stratified train/calibration/evaluation",
+  "parameters": {
+    "num_leaves": 63,
+    "max_depth": -1,
+    "learning_rate": 0.06,
+    "min_child_samples": 100,
+    "class_weight": {
+      "Grade 1": 0.95,
+      "Grade 2": 1.3,
+      "Grade 3": 1.25,
+      "Grade 4": 0.95,
+      "Grade 5": 0.8
+    }
+  },
+  "location_blend": {
+    "source": "prefix6",
+    "model_weight": 1.0,
+    "calibration_macro_f1": 0.5962546781867913
+  },
+  "best_iteration": 150,
+  "calibration_macro_f1_uncalibrated": 0.5962546781867913,
+  "calibration": {
+    "bias_by_grade": {
+      "Grade 1": 0.024999999999999967,
+      "Grade 2": 0.09999999999999964,
+      "Grade 3": -0.1000000000000002,
+      "Grade 4": 0.0,
+      "Grade 5": 0.0
+    },
+    "calibration_macro_f1": 0.5975284640295302,
+    "evaluation_macro_f1": 0.5847992374418258,
+    "evaluation_classification_report": {
+      "Grade 1": {
+        "precision": 0.6835488505747126,
+        "recall": 0.6899927483683829,
+        "f1-score": 0.6867556838686395,
+        "support": 2758.0
+      },
+      "Grade 2": {
+        "precision": 0.4214422813271182,
+        "recall": 0.5032743942370661,
+        "f1-score": 0.45873750186539325,
+        "support": 3054.0
+      },
+      "Grade 3": {
+        "precision": 0.4665957446808511,
+        "recall": 0.4592670157068063,
+        "f1-score": 0.4629023746701847,
+        "support": 4775.0
+      },
+      "Grade 4": {
+        "precision": 0.5601023017902813,
+        "recall": 0.5445221445221445,
+        "f1-score": 0.5522023481207154,
+        "support": 6435.0
+      },
+      "Grade 5": {
+        "precision": 0.7783999138580812,
+        "recall": 0.7489639452963116,
+        "f1-score": 0.7633982786841966,
+        "support": 9652.0
+      },
+      "accuracy": 0.613556272025193,
+      "macro avg": {
+        "precision": 0.5820178184462088,
+        "recall": 0.5892040496261423,
+        "f1-score": 0.5847992374418258,
+        "support": 26674.0
+      },
+      "weighted avg": {
+        "precision": 0.6192427614338982,
+        "recall": 0.613556272025193,
+        "f1-score": 0.615849053080656,
+        "support": 26674.0
+      }
+    },
+    "evaluation_confusion_matrix": [
+      [
+        1903,
+        566,
+        146,
+        72,
+        71
+      ],
+      [
+        459,
+        1537,
+        682,
+        239,
+        137
+      ],
+      [
+        211,
+        882,
+        2193,
+        1043,
+        446
+      ],
+      [
+        108,
+        367,
+        1052,
+        3504,
+        1404
+      ],
+      [
+        103,
+        295,
+        627,
+        1398,
+        7229
+      ]
+    ],
+    "uncalibrated_evaluation_macro_f1": 0.5860757034001906
+  },
+  "evaluation_macro_f1": 0.5860757034001906,
+  "evaluation_classification_report": {
+    "Grade 1": {
+      "precision": 0.680028378857751,
+      "recall": 0.6950688905003626,
+      "f1-score": 0.6874663797740721,
+      "support": 2758.0
+    },
+    "Grade 2": {
+      "precision": 0.4463546641197071,
+      "recall": 0.4590700720366732,
+      "f1-score": 0.4526230831315577,
+      "support": 3054.0
+    },
+    "Grade 3": {
+      "precision": 0.45120593692022265,
+      "recall": 0.5093193717277487,
+      "f1-score": 0.4785046728971963,
+      "support": 4775.0
+    },
+    "Grade 4": {
+      "precision": 0.5641025641025641,
+      "recall": 0.5333333333333333,
+      "f1-score": 0.5482866043613707,
+      "support": 6435.0
+    },
+    "Grade 5": {
+      "precision": 0.7805194805194805,
+      "recall": 0.7472026523000415,
+      "f1-score": 0.7634977768367563,
+      "support": 9652.0
+    },
+    "accuracy": 0.6146434730449126,
+    "macro avg": {
+      "precision": 0.584442204903945,
+      "recall": 0.5887988639796319,
+      "f1-score": 0.5860757034001906,
+      "support": 26674.0
+    },
+    "weighted avg": {
+      "precision": 0.620708097318713,
+      "recall": 0.6146434730449126,
+      "f1-score": 0.617106839074701,
+      "support": 26674.0
+    }
+  }
+}

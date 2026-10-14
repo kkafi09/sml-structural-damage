@@ -1,0 +1,164 @@
+{
+  "seed": 2026,
+  "method": "LightGBM; 90/5/5 stratified train/calibration/evaluation",
+  "parameters": {
+    "num_leaves": 63,
+    "max_depth": -1,
+    "learning_rate": 0.06,
+    "min_child_samples": 100,
+    "class_weight": {
+      "Grade 1": 0.95,
+      "Grade 2": 1.3,
+      "Grade 3": 1.25,
+      "Grade 4": 0.95,
+      "Grade 5": 0.8
+    }
+  },
+  "location_blend": {
+    "source": "prefix6",
+    "model_weight": 1.0,
+    "calibration_macro_f1": 0.596004777175209
+  },
+  "best_iteration": 121,
+  "calibration_macro_f1_uncalibrated": 0.596004777175209,
+  "calibration": {
+    "bias_by_grade": {
+      "Grade 1": 0.07499999999999996,
+      "Grade 2": 0.09999999999999964,
+      "Grade 3": -0.025000000000000022,
+      "Grade 4": 0.0,
+      "Grade 5": 0.024999999999999967
+    },
+    "calibration_macro_f1": 0.5967444809237288,
+    "evaluation_macro_f1": 0.5860652648273817,
+    "evaluation_classification_report": {
+      "Grade 1": {
+        "precision": 0.6829181494661922,
+        "recall": 0.6957940536620739,
+        "f1-score": 0.6892959770114943,
+        "support": 2758.0
+      },
+      "Grade 2": {
+        "precision": 0.4295977011494253,
+        "recall": 0.48952193844138836,
+        "f1-score": 0.4576063666972758,
+        "support": 3054.0
+      },
+      "Grade 3": {
+        "precision": 0.4551683633516053,
+        "recall": 0.4869109947643979,
+        "f1-score": 0.4705049074167763,
+        "support": 4775.0
+      },
+      "Grade 4": {
+        "precision": 0.5667439549519708,
+        "recall": 0.5317793317793318,
+        "f1-score": 0.5487052032389962,
+        "support": 6435.0
+      },
+      "Grade 5": {
+        "precision": 0.7813379519376489,
+        "recall": 0.7478242851222544,
+        "f1-score": 0.7642138697723664,
+        "support": 9652.0
+      },
+      "accuracy": 0.6140436379995501,
+      "macro avg": {
+        "precision": 0.5831532241713686,
+        "recall": 0.5903661207538893,
+        "f1-score": 0.5860652648273817,
+        "support": 26674.0
+      },
+      "weighted avg": {
+        "precision": 0.620731042691765,
+        "recall": 0.6140436379995501,
+        "f1-score": 0.616794606556651,
+        "support": 26674.0
+      }
+    },
+    "evaluation_confusion_matrix": [
+      [
+        1919,
+        534,
+        163,
+        73,
+        69
+      ],
+      [
+        451,
+        1495,
+        755,
+        219,
+        134
+      ],
+      [
+        216,
+        827,
+        2325,
+        968,
+        439
+      ],
+      [
+        118,
+        353,
+        1164,
+        3422,
+        1378
+      ],
+      [
+        106,
+        271,
+        701,
+        1356,
+        7218
+      ]
+    ],
+    "uncalibrated_evaluation_macro_f1": 0.5866229747074014
+  },
+  "evaluation_macro_f1": 0.5866229747074014,
+  "evaluation_classification_report": {
+    "Grade 1": {
+      "precision": 0.6866952789699571,
+      "recall": 0.6961566352429297,
+      "f1-score": 0.6913935902052575,
+      "support": 2758.0
+    },
+    "Grade 2": {
+      "precision": 0.44204935957513275,
+      "recall": 0.4633267845448592,
+      "f1-score": 0.4524380495603517,
+      "support": 3054.0
+    },
+    "Grade 3": {
+      "precision": 0.4484725800515274,
+      "recall": 0.5103664921465969,
+      "f1-score": 0.47742188265256147,
+      "support": 4775.0
+    },
+    "Grade 4": {
+      "precision": 0.5648666447151794,
+      "recall": 0.5331779331779332,
+      "f1-score": 0.5485650331761132,
+      "support": 6435.0
+    },
+    "Grade 5": {
+      "precision": 0.7834005889409968,
+      "recall": 0.7441980936593452,
+      "f1-score": 0.7632963179427236,
+      "support": 9652.0
+    },
+    "accuracy": 0.6143060658318962,
+    "macro avg": {
+      "precision": 0.5850968904505587,
+      "recall": 0.5894451877543327,
+      "f1-score": 0.5866229747074014,
+      "support": 26674.0
+    },
+    "weighted avg": {
+      "precision": 0.6216420573025537,
+      "recall": 0.6143060658318962,
+      "f1-score": 0.6172921520612151,
+      "support": 26674.0
+    }
+  }
+}

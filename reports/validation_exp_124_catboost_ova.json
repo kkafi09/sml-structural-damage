@@ -1,0 +1,39 @@
+{
+  "method": "CatBoost MultiClassOneVsAll over native feature subset; calibration-selected blend",
+  "fit_sample_size": 120000,
+  "best_iteration": 220,
+  "selected_by_calibration": {
+    "blend_weight": 0.1,
+    "calibration_macro_f1": 0.596888,
+    "evaluation_macro_f1": 0.596746
+  },
+  "all_blends": [
+    {
+      "blend_weight": 0.05,
+      "calibration_macro_f1": 0.59685,
+      "evaluation_macro_f1": 0.597096
+    },
+    {
+      "blend_weight": 0.1,
+      "calibration_macro_f1": 0.596888,
+      "evaluation_macro_f1": 0.596746
+    },
+    {
+      "blend_weight": 0.15,
+      "calibration_macro_f1": 0.596685,
+      "evaluation_macro_f1": 0.596298
+    },
+    {
+      "blend_weight": 0.2,
+      "calibration_macro_f1": 0.59572,
+      "evaluation_macro_f1": 0.595422
+    },
+    {
+      "blend_weight": 0.3,
+      "calibration_macro_f1": 0.593939,
+      "evaluation_macro_f1": 0.594183
+    }
+  ],
+  "baseline_evaluation_macro_f1": 0.5985512292352484,
+  "note": "Training and calibration completed. Report assembled from the live output; fitted model and probabilities were not saved because report serialization hit a None best_iteration value, now handled in the script."
+}

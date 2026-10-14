@@ -1,0 +1,103 @@
+{
+  "method": "OOF LinearSVC stack over three XGBoost, three LightGBM and CatBoost",
+  "parameters": {
+    "C": 10.0,
+    "class_weight": "balanced"
+  },
+  "calibration_oof_macro_f1": 0.5825210113052666,
+  "evaluation_macro_f1_uncalibrated": 0.5823569618815059,
+  "calibration": {
+    "bias_by_grade": {
+      "Grade 1": -0.3499999999999993,
+      "Grade 2": -0.1000000000000002,
+      "Grade 3": 0.0,
+      "Grade 4": 0.024999999999999967,
+      "Grade 5": 0.0
+    },
+    "calibration_macro_f1": 0.5951252151641062,
+    "evaluation_macro_f1": 0.5940462977040302,
+    "evaluation_classification_report": {
+      "Grade 1": {
+        "precision": 0.6851884007640215,
+        "recall": 0.7152437919158963,
+        "f1-score": 0.6998935792834339,
+        "support": 5517.0
+      },
+      "Grade 2": {
+        "precision": 0.4347524615171266,
+        "recall": 0.5132612966601179,
+        "f1-score": 0.47075606276747506,
+        "support": 6108.0
+      },
+      "Grade 3": {
+        "precision": 0.48309636650868876,
+        "recall": 0.48036443606660384,
+        "f1-score": 0.4817265280403277,
+        "support": 9549.0
+      },
+      "Grade 4": {
+        "precision": 0.5556487909070105,
+        "recall": 0.5660113450928588,
+        "f1-score": 0.5607822003233506,
+        "support": 12869.0
+      },
+      "Grade 5": {
+        "precision": 0.7896809767625049,
+        "recall": 0.727051388313303,
+        "f1-score": 0.7570731181055641,
+        "support": 19304.0
+      },
+      "accuracy": 0.618347798376666,
+      "macro avg": {
+        "precision": 0.5896733992918703,
+        "recall": 0.6003864516097559,
+        "f1-score": 0.5940462977040302,
+        "support": 53347.0
+      },
+      "weighted avg": {
+        "precision": 0.6269028344866422,
+        "recall": 0.618347798376666,
+        "f1-score": 0.6217396129570274,
+        "support": 53347.0
+      }
+    },
+    "evaluation_confusion_matrix": [
+      [
+        3946,
+        1053,
+        228,
+        167,
+        123
+      ],
+      [
+        959,
+        3135,
+        1294,
+        472,
+        248
+      ],
+      [
+        424,
+        1716,
+        4587,
+        2009,
+        813
+      ],
+      [
+        213,
+        716,
+        2102,
+        7284,
+        2554
+      ],
+      [
+        217,
+        591,
+        1284,
+        3177,
+        14035
+      ]
+    ],
+    "uncalibrated_evaluation_macro_f1": 0.5823569618815059
+  }
+}

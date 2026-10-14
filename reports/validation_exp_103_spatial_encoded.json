@@ -1,0 +1,115 @@
+{
+  "method": "LightGBM with cross-fitted ward-neighbor spatial target features",
+  "best_iterations": [
+    67,
+    94
+  ],
+  "spatial_features": [
+    "spatial_5_grade1",
+    "spatial_5_grade2",
+    "spatial_5_grade3",
+    "spatial_5_grade4",
+    "spatial_5_grade5",
+    "spatial_5_mean_grade",
+    "spatial_15_grade1",
+    "spatial_15_grade2",
+    "spatial_15_grade3",
+    "spatial_15_grade4",
+    "spatial_15_grade5",
+    "spatial_15_mean_grade"
+  ],
+  "calibration": {
+    "bias_by_grade": {
+      "Grade 1": 0.025000000000000834,
+      "Grade 2": 0.1999999999999993,
+      "Grade 3": 0.07499999999999965,
+      "Grade 4": 0.09999999999999964,
+      "Grade 5": 0.0
+    },
+    "calibration_macro_f1": 0.5928318672014877,
+    "evaluation_macro_f1": 0.5926280496777456,
+    "evaluation_classification_report": {
+      "Grade 1": {
+        "precision": 0.6926391382405745,
+        "recall": 0.6992930940728657,
+        "f1-score": 0.6959502119599531,
+        "support": 5517.0
+      },
+      "Grade 2": {
+        "precision": 0.44033275960986806,
+        "recall": 0.5026195153896529,
+        "f1-score": 0.4694189602446483,
+        "support": 6108.0
+      },
+      "Grade 3": {
+        "precision": 0.4752174792636051,
+        "recall": 0.49198868991517436,
+        "f1-score": 0.4834576794443015,
+        "support": 9549.0
+      },
+      "Grade 4": {
+        "precision": 0.559623676989416,
+        "recall": 0.5546662522340509,
+        "f1-score": 0.5571339369341243,
+        "support": 12869.0
+      },
+      "Grade 5": {
+        "precision": 0.7809403215150847,
+        "recall": 0.7348217985909656,
+        "f1-score": 0.7571794598057009,
+        "support": 19304.0
+      },
+      "accuracy": 0.6176354809080173,
+      "macro avg": {
+        "precision": 0.5897506751237097,
+        "recall": 0.5966778700405418,
+        "f1-score": 0.5926280496777456,
+        "support": 53347.0
+      },
+      "weighted avg": {
+        "precision": 0.6246979848269345,
+        "recall": 0.6176354809080173,
+        "f1-score": 0.6206469836366714,
+        "support": 53347.0
+      }
+    },
+    "evaluation_confusion_matrix": [
+      [
+        3858,
+        1099,
+        315,
+        137,
+        108
+      ],
+      [
+        904,
+        3070,
+        1428,
+        442,
+        264
+      ],
+      [
+        402,
+        1599,
+        4698,
+        1982,
+        868
+      ],
+      [
+        194,
+        663,
+        2135,
+        7138,
+        2739
+      ],
+      [
+        212,
+        541,
+        1310,
+        3056,
+        14185
+      ]
+    ],
+    "uncalibrated_evaluation_macro_f1": 0.5908127456164376
+  }
+}

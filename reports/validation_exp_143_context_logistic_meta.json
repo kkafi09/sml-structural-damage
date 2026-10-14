@@ -1,0 +1,42 @@
+{
+  "method": "3-fold OOF regularized logistic meta-model on stack probabilities plus context priors",
+  "context_feature_count": 359,
+  "selected_C": 0.03,
+  "candidate_oof_scores": [
+    {
+      "C": 0.0003,
+      "macro_f1": 0.575483468512705
+    },
+    {
+      "C": 0.001,
+      "macro_f1": 0.5805617704944023
+    },
+    {
+      "C": 0.003,
+      "macro_f1": 0.5856488032692305
+    },
+    {
+      "C": 0.01,
+      "macro_f1": 0.5868698369791103
+    },
+    {
+      "C": 0.03,
+      "macro_f1": 0.5884544482392862
+    },
+    {
+      "C": 0.1,
+      "macro_f1": 0.5877474774399407
+    }
+  ],
+  "calibration_oof_macro_f1_uncalibrated": 0.5884544482392862,
+  "calibration_oof_macro_f1_calibrated": 0.593822335762792,
+  "evaluation_macro_f1": 0.5961262357251924,
+  "baseline_evaluation_macro_f1": 0.5985512292352484,
+  "bias": [
+    -0.19999999999999996,
+    0.09999999999999976,
+    -0.025000000000000272,
+    -0.15000000000000047,
+    -0.39999999999999947
+  ]
+}

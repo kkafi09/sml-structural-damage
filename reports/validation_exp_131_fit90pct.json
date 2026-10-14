@@ -1,0 +1,12 @@
+{
+  "method": "LightGBM multiclass fit on 90% cached split; no eval labels used",
+  "fit_rows": 480119,
+  "evaluation_macro_f1_baseline": 0.5985512292352484,
+  "scores": {
+    "student_raw": 0.5885904755211053,
+    "baseline_fixed_bias": 0.5985512292352484,
+    "fixed_5pct_blend": 0.5985507909682972,
+    "fixed_10pct_blend": 0.5983013462562278
+  },
+  "note": "Training/cal/eval encodings all come from the same cached 80%-fit feature construction; the additional calibration labels enter only as supervised rows."
+}

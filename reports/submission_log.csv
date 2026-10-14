@@ -1,2 +1,3 @@
 experiment_id,submitted_at,model,validation_macro_f1,public_score,private_score,public_rank,submission_file,notes
 catboost_balanced_001,2026-09-28,CatBoost depth=6 Balanced,0.52454893,0.52978,,6,submissions/catboost_balanced_001.csv,Initial Kaggle submission; score and rank read from screenshot
+kaggle_screenshot_2026_10_02,2026-10-02,Unknown (Kaggle card shows submission.csv),,0.59606,,3,submission.csv,Screenshot reports public score 0.59606 and rank 3; local file mapping and private score unverified

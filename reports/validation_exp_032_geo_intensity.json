@@ -1,0 +1,164 @@
+{
+  "seed": 2026,
+  "method": "LightGBM; 80/10/10 stratified train/calibration/evaluation",
+  "parameters": {
+    "num_leaves": 63,
+    "max_depth": -1,
+    "learning_rate": 0.06,
+    "min_child_samples": 100,
+    "class_weight": {
+      "Grade 1": 0.95,
+      "Grade 2": 1.3,
+      "Grade 3": 1.25,
+      "Grade 4": 0.95,
+      "Grade 5": 0.8
+    }
+  },
+  "location_blend": {
+    "source": "prefix6",
+    "model_weight": 0.9750000000000001,
+    "calibration_macro_f1": 0.5912369664532859
+  },
+  "best_iteration": 87,
+  "calibration_macro_f1_uncalibrated": 0.5912369664532859,
+  "calibration": {
+    "bias_by_grade": {
+      "Grade 1": 0.0,
+      "Grade 2": 0.0,
+      "Grade 3": 0.0,
+      "Grade 4": 0.09999999999999964,
+      "Grade 5": -0.1000000000000002
+    },
+    "calibration_macro_f1": 0.5920252656203582,
+    "evaluation_macro_f1": 0.5900939257099977,
+    "evaluation_classification_report": {
+      "Grade 1": {
+        "precision": 0.6805506530180021,
+        "recall": 0.6989305782127968,
+        "f1-score": 0.6896181704372708,
+        "support": 5517.0
+      },
+      "Grade 2": {
+        "precision": 0.45045900601456157,
+        "recall": 0.46594629993451214,
+        "f1-score": 0.4580717849670047,
+        "support": 6108.0
+      },
+      "Grade 3": {
+        "precision": 0.46161101678928507,
+        "recall": 0.5125143994135511,
+        "f1-score": 0.4857327179792566,
+        "support": 9549.0
+      },
+      "Grade 4": {
+        "precision": 0.54849351220585,
+        "recall": 0.5813971559561738,
+        "f1-score": 0.5644662391550358,
+        "support": 12869.0
+      },
+      "Grade 5": {
+        "precision": 0.8005841121495327,
+        "recall": 0.7100082884376295,
+        "f1-score": 0.7525807160114211,
+        "support": 19304.0
+      },
+      "accuracy": 0.6145425234783587,
+      "macro avg": {
+        "precision": 0.5883396600354462,
+        "recall": 0.5937593443909327,
+        "f1-score": 0.5900939257099977,
+        "support": 53347.0
+      },
+      "weighted avg": {
+        "precision": 0.6265950075968622,
+        "recall": 0.6145425234783587,
+        "f1-score": 0.6192048626246169,
+        "support": 53347.0
+      }
+    },
+    "evaluation_confusion_matrix": [
+      [
+        3856,
+        1033,
+        375,
+        152,
+        101
+      ],
+      [
+        955,
+        2846,
+        1593,
+        493,
+        221
+      ],
+      [
+        419,
+        1386,
+        4894,
+        2086,
+        764
+      ],
+      [
+        208,
+        566,
+        2285,
+        7482,
+        2328
+      ],
+      [
+        228,
+        487,
+        1455,
+        3428,
+        13706
+      ]
+    ],
+    "uncalibrated_evaluation_macro_f1": 0.5885216989265079
+  },
+  "evaluation_macro_f1": 0.5885216989265079,
+  "evaluation_classification_report": {
+    "Grade 1": {
+      "precision": 0.6797040169133193,
+      "recall": 0.6992930940728657,
+      "f1-score": 0.6893594210667381,
+      "support": 5517.0
+    },
+    "Grade 2": {
+      "precision": 0.4488832966341617,
+      "recall": 0.4672560576293386,
+      "f1-score": 0.4578854484197016,
+      "support": 6108.0
+    },
+    "Grade 3": {
+      "precision": 0.45877281482160875,
+      "recall": 0.5238244842391874,
+      "f1-score": 0.48914531586152943,
+      "support": 9549.0
+    },
+    "Grade 4": {
+      "precision": 0.5667300223122056,
+      "recall": 0.5329085399020903,
+      "f1-score": 0.549299158990789,
+      "support": 12869.0
+    },
+    "Grade 5": {
+      "precision": 0.7774864820580043,
+      "recall": 0.7374119353501865,
+      "f1-score": 0.7569191502937814,
+      "support": 19304.0
+    },
+    "accuracy": 0.6149736629988566,
+    "macro avg": {
+      "precision": 0.5863153265478599,
+      "recall": 0.5921388222387337,
+      "f1-score": 0.5885216989265079,
+      "support": 53347.0
+    },
+    "weighted avg": {
+      "precision": 0.6218601899388396,
+      "recall": 0.6149736629988566,
+      "f1-score": 0.6176787264599339,
+      "support": 53347.0
+    }
+  }
+}

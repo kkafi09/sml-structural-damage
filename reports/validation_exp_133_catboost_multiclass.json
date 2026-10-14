@@ -1,0 +1,119 @@
+{
+  "method": "CatBoost MultiClass over native feature subset, calibration-selected blend",
+  "fit_sample_size": 180000,
+  "features": [
+    "count_floors_pre_eq",
+    "age_building",
+    "plinth_area_sq_ft",
+    "height_ft_pre_eq",
+    "area_per_floor",
+    "height_per_floor",
+    "district_id",
+    "vdcmun_id",
+    "ward_id",
+    "land_surface_condition",
+    "foundation_type",
+    "roof_type",
+    "ground_floor_type",
+    "other_floor_type",
+    "position",
+    "plan_configuration",
+    "superstructure",
+    "pred_intensity",
+    "intensity_band",
+    "intensity_x_age",
+    "intensity_x_floors",
+    "intensity_x_height_per_floor",
+    "intensity_x_area_per_floor"
+  ],
+  "categorical_features": [
+    "district_id",
+    "vdcmun_id",
+    "ward_id",
+    "land_surface_condition",
+    "foundation_type",
+    "roof_type",
+    "ground_floor_type",
+    "other_floor_type",
+    "position",
+    "plan_configuration",
+    "superstructure",
+    "intensity_band"
+  ],
+  "best_iteration": 100,
+  "selected_by_calibration": {
+    "blend_weight": 0.05,
+    "calibration_macro_f1": 0.5969950809226597,
+    "evaluation_macro_f1": 0.5967794698059826,
+    "bias": [
+      -0.3500000000000001,
+      0.0,
+      0.04999999999999996,
+      0.024999999999999967,
+      -0.2500000000000001
+    ]
+  },
+  "all_blends": [
+    {
+      "blend_weight": 0.05,
+      "calibration_macro_f1": 0.5969950809226597,
+      "evaluation_macro_f1": 0.5967794698059826,
+      "bias": [
+        -0.3500000000000001,
+        0.0,
+        0.04999999999999996,
+        0.024999999999999967,
+        -0.2500000000000001
+      ]
+    },
+    {
+      "blend_weight": 0.1,
+      "calibration_macro_f1": 0.5967378414599895,
+      "evaluation_macro_f1": 0.5969790313148435,
+      "bias": [
+        -0.32500000000000007,
+        0.0,
+        -0.025000000000000022,
+        -0.15000000000000008,
+        -0.4499999999999993
+      ]
+    },
+    {
+      "blend_weight": 0.15,
+      "calibration_macro_f1": 0.5961157272448256,
+      "evaluation_macro_f1": 0.5971394614110108,
+      "bias": [
+        -0.12499999999999911,
+        0.1999999999999995,
+        0.09999999999999976,
+        0.0,
+        -0.3500000000000001
+      ]
+    },
+    {
+      "blend_weight": 0.2,
+      "calibration_macro_f1": 0.5952992794411262,
+      "evaluation_macro_f1": 0.5961040249528302,
+      "bias": [
+        -0.12499999999999911,
+        0.1249999999999995,
+        0.09999999999999976,
+        0.0,
+        -0.30000000000000016
+      ]
+    },
+    {
+      "blend_weight": 0.3,
+      "calibration_macro_f1": 0.5927252443164948,
+      "evaluation_macro_f1": 0.5940830722904549,
+      "bias": [
+        -0.17499999999999916,
+        0.12499999999999975,
+        0.0,
+        -0.10000000000000003,
+        -0.4249999999999994
+      ]
+    }
+  ],
+  "baseline_evaluation_macro_f1": 0.5985512292352484
+}

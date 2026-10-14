@@ -1,0 +1,171 @@
+{
+  "method": "Nystroem RBF meta-model on six base learners; class-balanced logistic regression",
+  "cv_folds": 3,
+  "configurations": [
+    {
+      "parameters": {
+        "gamma": 0.01,
+        "components": 128,
+        "C": 0.1
+      },
+      "calibration_oof_macro_f1": 0.5887607695386965
+    },
+    {
+      "parameters": {
+        "gamma": 0.01,
+        "components": 128,
+        "C": 1.0
+      },
+      "calibration_oof_macro_f1": 0.5877256386796162
+    },
+    {
+      "parameters": {
+        "gamma": 0.01,
+        "components": 256,
+        "C": 0.1
+      },
+      "calibration_oof_macro_f1": 0.5887532252574241
+    },
+    {
+      "parameters": {
+        "gamma": 0.01,
+        "components": 256,
+        "C": 1.0
+      },
+      "calibration_oof_macro_f1": 0.5871591704149933
+    },
+    {
+      "parameters": {
+        "gamma": 0.05,
+        "components": 128,
+        "C": 0.1
+      },
+      "calibration_oof_macro_f1": 0.5868974190312024
+    },
+    {
+      "parameters": {
+        "gamma": 0.05,
+        "components": 128,
+        "C": 1.0
+      },
+      "calibration_oof_macro_f1": 0.5872058173524267
+    },
+    {
+      "parameters": {
+        "gamma": 0.05,
+        "components": 256,
+        "C": 0.1
+      },
+      "calibration_oof_macro_f1": 0.5874431463368375
+    },
+    {
+      "parameters": {
+        "gamma": 0.05,
+        "components": 256,
+        "C": 1.0
+      },
+      "calibration_oof_macro_f1": 0.5880554076642254
+    }
+  ],
+  "selected_parameters": {
+    "gamma": 0.01,
+    "components": 128,
+    "C": 0.1
+  },
+  "calibration_oof_macro_f1": 0.5887607695386965,
+  "calibration": {
+    "bias_by_grade": {
+      "Grade 1": -0.6999999999999993,
+      "Grade 2": -0.20000000000000018,
+      "Grade 3": 0.0,
+      "Grade 4": 0.0,
+      "Grade 5": 0.19999999999999973
+    },
+    "calibration_macro_f1": 0.5964772723037052,
+    "evaluation_macro_f1": 0.5946232413747374,
+    "evaluation_classification_report": {
+      "Grade 1": {
+        "precision": 0.7038532110091743,
+        "recall": 0.695305419612108,
+        "f1-score": 0.6995532050697547,
+        "support": 5517.0
+      },
+      "Grade 2": {
+        "precision": 0.4238427393785669,
+        "recall": 0.5471512770137524,
+        "f1-score": 0.477667405131137,
+        "support": 6108.0
+      },
+      "Grade 3": {
+        "precision": 0.46175478065241843,
+        "recall": 0.515865535658184,
+        "f1-score": 0.4873126576643419,
+        "support": 9549.0
+      },
+      "Grade 4": {
+        "precision": 0.5757857384251436,
+        "recall": 0.529567176936825,
+        "f1-score": 0.5517101801254807,
+        "support": 12869.0
+      },
+      "Grade 5": {
+        "precision": 0.7956933973040896,
+        "recall": 0.7216639038541235,
+        "f1-score": 0.7568727588829729,
+        "support": 19304.0
+      },
+      "accuracy": 0.6157797064502222,
+      "macro avg": {
+        "precision": 0.5921859733538786,
+        "recall": 0.6019106626149986,
+        "f1-score": 0.5946232413747374,
+        "support": 53347.0
+      },
+      "weighted avg": {
+        "precision": 0.6307971962259015,
+        "recall": 0.6157797064502222,
+        "f1-score": 0.6212346740483877,
+        "support": 53347.0
+      }
+    },
+    "evaluation_confusion_matrix": [
+      [
+        3836,
+        1256,
+        234,
+        88,
+        103
+      ],
+      [
+        856,
+        3342,
+        1392,
+        297,
+        221
+      ],
+      [
+        358,
+        1920,
+        4926,
+        1575,
+        770
+      ],
+      [
+        194,
+        743,
+        2634,
+        6815,
+        2483
+      ],
+      [
+        206,
+        624,
+        1482,
+        3061,
+        13931
+      ]
+    ],
+    "uncalibrated_evaluation_macro_f1": 0.5874186335829543
+  },
+  "baseline_evaluation_macro_f1": 0.5985512292352484
+}

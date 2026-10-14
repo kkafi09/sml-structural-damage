@@ -1,0 +1,6 @@
+{
+  "method": "One-vs-rest Platt scaling of each stacked class probability",
+  "selected_C": 10.0,
+  "calibration_cv_macro_f1": 0.5919447317000158,
+  "evaluation_macro_f1": 0.5915702311258243
+}

@@ -1,0 +1,150 @@
+{
+  "method": "XGBoost + 0.6 multiclass/0.4 OVA LightGBM; 80/10/10 split",
+  "selected_xgboost_weight_by_calibration": 0.6000000000000001,
+  "selected_evaluation_macro_f1_after_bias": 0.5940765070102823,
+  "blends": [
+    {
+      "xgboost_weight": 0.0,
+      "calibration_macro_f1_after_bias": 0.5925694181763353,
+      "evaluation_macro_f1": 0.5893414782695139,
+      "evaluation_macro_f1_after_bias": 0.5908762640601182,
+      "bias_by_grade": {
+        "Grade 1": 0.05000000000000085,
+        "Grade 2": 0.14999999999999966,
+        "Grade 3": 0.05000000000000085,
+        "Grade 4": 0.12499999999999964,
+        "Grade 5": 0.0
+      }
+    },
+    {
+      "xgboost_weight": 0.1,
+      "calibration_macro_f1_after_bias": 0.5937128918402965,
+      "evaluation_macro_f1": 0.5898809299246923,
+      "evaluation_macro_f1_after_bias": 0.5913140058661787,
+      "bias_by_grade": {
+        "Grade 1": 8.881784197001252e-16,
+        "Grade 2": 0.09999999999999964,
+        "Grade 3": -0.05000000000000002,
+        "Grade 4": 0.09999999999999964,
+        "Grade 5": -0.05000000000000002
+      }
+    },
+    {
+      "xgboost_weight": 0.2,
+      "calibration_macro_f1_after_bias": 0.5944680177520303,
+      "evaluation_macro_f1": 0.5902773623604973,
+      "evaluation_macro_f1_after_bias": 0.5914378636621801,
+      "bias_by_grade": {
+        "Grade 1": -0.04999999999999927,
+        "Grade 2": 0.09999999999999964,
+        "Grade 3": 0.0,
+        "Grade 4": -0.05000000000000057,
+        "Grade 5": -0.1000000000000002
+      }
+    },
+    {
+      "xgboost_weight": 0.30000000000000004,
+      "calibration_macro_f1_after_bias": 0.5948410845444136,
+      "evaluation_macro_f1": 0.591000105075793,
+      "evaluation_macro_f1_after_bias": 0.5932154781020141,
+      "bias_by_grade": {
+        "Grade 1": -0.17499999999999993,
+        "Grade 2": 0.07499999999999996,
+        "Grade 3": 0.0,
+        "Grade 4": -0.07500000000000004,
+        "Grade 5": -0.1750000000000002
+      }
+    },
+    {
+      "xgboost_weight": 0.4,
+      "calibration_macro_f1_after_bias": 0.5951652372115781,
+      "evaluation_macro_f1": 0.5912023837326245,
+      "evaluation_macro_f1_after_bias": 0.5941528611760417,
+      "bias_by_grade": {
+        "Grade 1": -0.2,
+        "Grade 2": 0.09999999999999964,
+        "Grade 3": 0.049999999999999406,
+        "Grade 4": 0.0,
+        "Grade 5": -0.30000000000000016
+      }
+    },
+    {
+      "xgboost_weight": 0.5,
+      "calibration_macro_f1_after_bias": 0.5951899803732228,
+      "evaluation_macro_f1": 0.5913392662514915,
+      "evaluation_macro_f1_after_bias": 0.5935099856975444,
+      "bias_by_grade": {
+        "Grade 1": -0.2249999999999992,
+        "Grade 2": 0.09999999999999964,
+        "Grade 3": 0.07499999999999965,
+        "Grade 4": 0.0,
+        "Grade 5": -0.05000000000000002
+      }
+    },
+    {
+      "xgboost_weight": 0.6000000000000001,
+      "calibration_macro_f1_after_bias": 0.595812820634035,
+      "evaluation_macro_f1": 0.5908858890786799,
+      "evaluation_macro_f1_after_bias": 0.5940765070102823,
+      "bias_by_grade": {
+        "Grade 1": -0.2249999999999992,
+        "Grade 2": 0.09999999999999964,
+        "Grade 3": 0.0,
+        "Grade 4": -0.15000000000000022,
+        "Grade 5": -0.4749999999999994
+      }
+    },
+    {
+      "xgboost_weight": 0.7000000000000001,
+      "calibration_macro_f1_after_bias": 0.5956671034751706,
+      "evaluation_macro_f1": 0.5903969762832805,
+      "evaluation_macro_f1_after_bias": 0.5945859726959236,
+      "bias_by_grade": {
+        "Grade 1": -0.14999999999999913,
+        "Grade 2": 0.17499999999999927,
+        "Grade 3": 0.09999999999999964,
+        "Grade 4": -0.025000000000000022,
+        "Grade 5": -0.15000000000000024
+      }
+    },
+    {
+      "xgboost_weight": 0.8,
+      "calibration_macro_f1_after_bias": 0.5953236475930032,
+      "evaluation_macro_f1": 0.5900007247157577,
+      "evaluation_macro_f1_after_bias": 0.5944799593588124,
+      "bias_by_grade": {
+        "Grade 1": -0.19999999999999984,
+        "Grade 2": 0.14999999999999963,
+        "Grade 3": 0.09999999999999964,
+        "Grade 4": -0.025000000000000022,
+        "Grade 5": -0.49999999999999956
+      }
+    },
+    {
+      "xgboost_weight": 0.9,
+      "calibration_macro_f1_after_bias": 0.5946585259293996,
+      "evaluation_macro_f1": 0.5881562044966645,
+      "evaluation_macro_f1_after_bias": 0.5950419357427444,
+      "bias_by_grade": {
+        "Grade 1": -0.34999999999999987,
+        "Grade 2": 0.04999999999999996,
+        "Grade 3": -0.10000000000000053,
+        "Grade 4": -0.30000000000000016,
+        "Grade 5": -0.65
+      }
+    },
+    {
+      "xgboost_weight": 1.0,
+      "calibration_macro_f1_after_bias": 0.5936903425988149,
+      "evaluation_macro_f1": 0.5870819460759639,
+      "evaluation_macro_f1_after_bias": 0.5944978896465961,
+      "bias_by_grade": {
+        "Grade 1": -0.375,
+        "Grade 2": 0.024999999999999967,
+        "Grade 3": 0.0,
+        "Grade 4": -0.12500000000000022,
+        "Grade 5": -0.29999999999999893
+      }
+    }
+  ]
+}
